@@ -1,0 +1,1138 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SKMPC SUKANTANAGAR</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght=300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --primary: #4b0000;
+    --secondary: #8b0000;
+    --accent: #d4af37;
+    --gold-light: #fff2cc;
+    --dark: #2c3e50;
+    --light: #f8f9fa;
+    --shadow: 0 15px 35px rgba(0,0,0,0.2);
+    --border-radius: 20px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg, #2b0000 0%, #5c0000 50%, #8b0000 100%);
+    padding: 30px 20px;
+    min-height: 100vh;
+}
+
+.main-wrapper {
+    max-width: 1500px;
+    margin: auto;
+}
+
+.container{
+    background: #ffffff;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* PREMIUM HEADER */
+.header{
+    background: linear-gradient(135deg, #3a0000, #6a0000, #9e7815);
+    padding: 25px 30px;
+    border-bottom: 5px solid var(--accent);
+}
+
+.headerTop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.sideImage img{
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #FFD700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    background: #fff;
+    transition: transform 0.5s ease;
+}
+
+.sideImage img:hover {
+    transform: rotate(360deg);
+}
+
+.center{
+    flex: 1;
+    text-align: center;
+}
+
+.center h1{
+    color: #FFD700;
+    font-size: 44px;
+    font-weight: 800;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
+}
+
+.center h3{
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+}
+
+/* MARQUEE NOTICE BOX */
+.marquee-box {
+    background: #4b0000;
+    border-bottom: 2px solid var(--accent);
+    padding: 12px 0;
+    color: #FFD700;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+/* BUTTONS BAR */
+.member-buttons-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 25px;
+    background: #fdfdfd;
+    border-bottom: 1px solid #f0f0f0;
+    flex-wrap: wrap;
+}
+
+.header-btn {
+    flex: 1; 
+    min-width: 180px;
+    padding: 14px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 2px solid #FFD700;
+    border-radius: 12px;
+    cursor: pointer;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.btn-see { background: linear-gradient(45deg, #00c6ff, #0072ff); }
+.btn-donate { background: linear-gradient(45deg, #ff416c, #ff4b2b); }
+.btn-media { background: linear-gradient(45deg, #a855f7, #ec4899); }
+.btn-contact { background: linear-gradient(45deg, #3a1c71, #d76d77, #ffaf7b); }
+.btn-admin { background: linear-gradient(45deg, #11998e, #38ef7d); }
+
+.header-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+    filter: brightness(1.1);
+}
+
+/* DASHBOARD */
+.dashboard{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 25px;
+    background: #fdfdfd;
+}
+
+.card{
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border: 1px solid #f0f0f0;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(139,0,0,0.15);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary), var(--accent));
+}
+
+.card h3{
+    color: #2c3e50;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.card h1{
+    margin-top: 10px;
+    font-size: 24px;
+    color: var(--secondary);
+    font-weight: 800;
+}
+
+/* TITLE BOX */
+.record-title-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 25px 5px;
+    background: #fdfdfd;
+}
+
+.record-title-inner {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    color: #FFD700;
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 30px;
+    border: 2px solid var(--accent);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* DATA TABLE CONTAINER */
+.tableBox{
+    padding: 10px 25px 35px;
+    overflow: auto;
+    background: #fdfdfd;
+}
+
+table{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+th{
+    background: var(--secondary);
+    color: #fff;
+    padding: 16px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+th:first-child { border-top-left-radius: 8px; border-bottom-left-radius: 8px; }
+th:last-child { border-top-right-radius: 8px; border-bottom-right-radius: 8px; }
+
+td{
+    padding: 14px;
+    background: #fff;
+    border-top: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
+    color: #1e293b;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 700;
+}
+
+td:first-child { border-left: 1px solid #f1f5f9; border-top-left-radius: 8px; border-bottom-left-radius: 8px; }
+td:last-child { border-right: 1px solid #f1f5f9; border-top-right-radius: 8px; border-bottom-right-radius: 8px; }
+
+tr:hover td {
+    background: #fffbeb !important;
+    border-color: #fde68a;
+}
+
+tr:nth-child(even) td{
+    background: #f8fafc;
+}
+
+/* PREMIUM MODAL OVERLAYS */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.member-modal {
+    background: #fff;
+    width: 90%;
+    max-width: 850px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+    animation: zoomIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: #FFD700;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--accent);
+}
+
+.modal-header h3 { font-size: 20px; display: flex; align-items: center; gap: 8px;}
+.close-modal {
+    background: none; border: none; color: #fff; font-size: 28px; cursor: pointer; line-height: 1;
+}
+.close-modal:hover { color: #FFD700; }
+
+.modal-body {
+    padding: 25px;
+    max-height: 75vh;
+    overflow-y: auto;
+}
+
+/* TABLE CARD DESIGN FOR DETAILS */
+.details-card {
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.details-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--secondary);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 6px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+.details-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed #e2e8f0;
+    font-size: 15px;
+}
+.details-row:last-child { border: none; }
+.details-label { font-weight: 600; color: var(--dark); }
+.details-value { font-weight: 500; color: #475569; }
+
+/* MEDIA CONTENT GRID */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.gallery-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.gallery-item img, .gallery-item video {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border: none;
+}
+
+.gallery-item-title {
+    padding: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--dark);
+}
+
+/* QR CONTAINER */
+.qr-container {
+    text-align: center;
+    padding: 10px;
+}
+.qr-container img {
+    width: 240px;
+    height: 240px;
+    margin: 15px 0;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    border-radius: 10px;
+}
+
+/* MEMBER ITEM ROW MODIFIED FOR SL, NAME, DESIGNATION, MOBILE */
+.member-row {
+    display: grid;
+    grid-template-columns: 80px 1.5fr 1.2fr 1.2fr;
+    gap: 15px;
+    align-items: center;
+    padding: 14px 18px;
+    background: #f8fafc;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    border-left: 4px solid var(--accent);
+    font-weight: 700;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+.member-row-header {
+    background: var(--dark) !important;
+    color: #fff !important;
+    border-left: 4px solid transparent;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* ADMIN AUTH STYLES */
+.auth-container {
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+}
+.admin-input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 2px solid #e2e8f0;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+.admin-btn {
+    padding: 12px 30px;
+    background: linear-gradient(45deg, #11998e, #38ef7d);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+/* CONTACT US PROFILE STYLE */
+.contact-profile-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid var(--accent);
+    margin-bottom: 20px;
+}
+.contact-avatar {
+    width: 110px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid var(--secondary);
+}
+.contact-info h4 {
+    font-size: 18px;
+    color: var(--secondary);
+    font-weight: 700;
+}
+.contact-info p {
+    font-size: 14px;
+    color: var(--dark);
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+/* RESPONSIVE DESIGN */
+@media(max-width: 1024px){
+    .member-buttons-bar { flex-wrap: wrap; justify-content: center; }
+    .header-btn { max-width: 45%; flex: none; width: 45%; }
+    .center h1 { font-size: 32px; white-space: normal; }
+    .center h3 { font-size: 18px; }
+    .dashboard { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media(max-width: 768px){
+    .dashboard { grid-template-columns: 1fr; }
+    .header-btn { width: 100%; max-width: 100%; }
+    .center h1 { font-size: 26px; }
+    .center h3 { font-size: 16px; }
+    .member-row { grid-template-columns: 50px 1.2fr 1fr 1fr; font-size: 13px; padding: 10px; }
+    .contact-profile-box { flex-direction: column; text-align: center; }
+}
+.style1 {
+	color: #FFFFFF;
+	font-weight: bold;
+}
+.style2 {font-size: 18px}
+
+/* ---- SEGMENTED (DASHED) CSS LOADER ---- */
+.loader-wrapper {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* Creates the dashed/segmented background circle */
+    border: 10px dashed rgba(255, 215, 0, 0.2); 
+    /* The active moving segment */
+    border-top: 10px dashed #FFD700; 
+    animation: spin 2s linear infinite;
+}
+
+.loader-text {
+    position: absolute;
+    color: #FFD700;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    animation: textPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes textPulse {
+    0% { opacity: 0.6; transform: scale(0.95); }
+    50% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 0.6; transform: scale(0.95); }
+}
+</style>
+</head>
+<body>
+
+<div class="main-wrapper">
+  <div class="container">
+        
+        <div class="header">
+            <div class="headerTop">
+                <div class="sideImage">
+                    <img src="logo.png" alt="Kali Ma">
+                </div>
+                <div class="center">
+                    <h1>SHIV KALI MANDIR PUJA COMMITTEE</h1>
+                    <h3>SUKANTA NAGAR, PURBA PARA, BUDBUD</h3>
+                </div>
+                <div class="sideImage">
+                    <img src="mandir.png" alt="Shiv Ji">
+                </div>
+            </div>
+        </div>
+
+        <div class="marquee-box">
+            <marquee direction="left" scrollamount="5" id="mandirMarquee" onMouseOver="this.stop();" onMouseOut="this.start();">
+               🚩 शिव काली मंदिर पूजा कमेटी में आपका स्वागत है। यह मंदिर बहुत ही पुरातन (1974) मां काली के लिए प्रसिद्ध है जो सुकांत नगर, पूर्व पाड़ा, बुदबुद, पूर्व बर्धमान, पश्चिम बंगाल में स्थित है। इस मंदिर में जो भी सच्चे दिल, सच्ची भक्ति भावना से मांगा जाता है तो मां काली उन सभी भक्तों की सभी मनोकामनाएं पूर्ण करती हैं। अतः सभी भक्तों से निवेदन है कि इस मंदिर में यथासंभव दान करके पुण्य फल प्राप्त करें। 🚩 শিব কালী মন্দির পূজা কমিটিতে আপনাকে স্বাগত। এই মন্দিরটি অত্যন্ত প্রাচীন (1974) মা কালীর জন্য বিখ্যাত যা সুকান্ত নগর, পূর্ব পাড়া, বুদবুদ, পূর্ব বর্ধমান, পশ্চিমবঙ্গ-এ অবস্থিত। এই মন্দিরে যে কেউ খাঁটি মন এবং সত্য ভক্তি ভাব নিয়ে কিছু প্রার্থনা করলে মা কালী সেই সকল भक्तদের সব মনস্কামনা পূর্ণ করেন। অতএব সকল ভক্তবৃন্দের কাছে নিবেদন যে এই মন্দিরে যথাসম্ভব দান করে পুণ্য ফল লাভ করুন। 🚩 Welcome to Shiv Kali Mandir Puja Committee. This temple is famous for the ancient (1974) Maa Kali, located in Sukanta Nagar, Purba Para, Budbud, Purba Bardhaman, West Bengal. Whatever is wished in this temple with a pure heart and true devotion, Maa Kali fulfills all the wishes of those devotees. Therefore, all devotees are requested to contribute as much donation as possible to this temple and receive divine blessings. 🚩
+            </marquee>
+        </div>
+
+        <div class="member-buttons-bar">
+            <button class="header-btn btn-see" onClick="openModal('seeMemberModal')">👥 See Members</button>
+            <button class="header-btn btn-donate" onClick="openModal('donateModal')">❤️ Please Donate</button>
+            <button class="header-btn btn-media" onClick="openMediaModal()">📸 Photos & Videos</button>
+            <button class="header-btn btn-contact" onClick="openModal('contactDetailsModal')">📞 Contact Us</button>
+            <button class="header-btn btn-admin" onClick="openModal('adminAuthModal')">⚙️ Admin Panel</button>
+        </div>
+
+        <div class="dashboard">
+            <div class="card">
+                <h3>Amavasya Date<br>अमावस्या तिथि<br>অমাবস্যা তারিখ</h3>
+                <h1>14/07/2026</h1>
+            </div>
+            <div class="card">
+                <h3>Pujari Time<br>पुजारी समय<br>পূজারী সময়</h3>
+                <h1>Morning 09:00 AM</h1>
+            </div>
+            <div class="card">
+                <h3>Mandir Opening Time<br>मंदिर खुलने समय<br>মন্দির খোলার এর সময়</h3>
+                <h1>Morning 05:00 AM</h1>
+            </div>
+            <div class="card">
+                <h3>Mandir Closing Time<br>मंदिर बंद होने<br>মন্দির বন্ধ করার এর সময়</h3>
+                <h1>Night 08:00 PM</h1>
+            </div>
+        </div>
+
+        <div class="record-title-box">
+            <div class="record-title-inner">
+                <p>📋 Donor List / दानदाताओं / দাতা তালিকা</p>
+            </div>
+        </div>
+
+        <div class="tableBox">
+            <table id="donorTable">
+                <thead>
+                    <tr>
+                        <th>SL</th>
+                        <th>NAME</th>
+                        <th>MOBILE</th>
+                        <th>ADDRESS</th>
+                        <th>AMOUNT</th>
+                        <th>PRODUCT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     <tr>
+                        <td>1</td>
+
+                        <td>SRI BACHU DA</td>
+                        <td>-</td>
+                        <td>BUDBUD</td>
+                        <td>N/A</td>
+                        <td>PRADIP, HATA, DHUPDANI</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>SRI SUBIR DA</td>
+                        <td>-</td>
+                        <td>BUDBUD</td>
+                        <td>N/A</td>
+                        <td>KADAI, KHUNTI,</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>SRI TAPAN MALLICK</td>
+                        <td>-</td>
+                        <td>BUDBUD</td>
+                        <td>N/A</td>
+                        <td>KANSA</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>SRI PYARE LAL SHAW</td>
+                        <td>-</td>
+                        <td>BUDBUD</td>
+                        <td>N/A</td>
+                        <td>PITAL THALI</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>SRI ASHOK DAS</td>
+                        <td>-</td>
+                        <td>BUDBUD</td>
+                        <td>N/A</td>
+                        <td>GAMLA, DHUNCHI, MOR FAN</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>SRI UDAY SHAW</td>
+                        <td>-</td>
+                        <td>BUDBUD</td>
+                        <td>N/A</td>
+                        <td>MIC</td>
+                  </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>SRI PROBIR DAS</td>
+                        <td>-</td>
+                        <td>BUDBUD</td>
+                        <td>N/A</td>
+                        <td>PANCHMUKHI SANKH</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>SRI PRAKASH GHOSH</td>
+                        <td>-</td>
+                        <td>BUDBUD</td>
+                        <td>N/A</td>
+                        <td>PITAL GHANTI</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>SRI AJIT DUTTA</td>
+                        <td>-</td>
+                        <td>BUDBUD</td>
+                        <td>N/A</td>
+                        <td>GHANTA</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>SRI SANTOSH KUMAR GUPTA</td>
+                        <td>-</td>
+                        <td>BUDBUD</td>
+                        <td>201/-</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>SRI ANUPAM MAITY (GOVT. OFFICER)</td>
+                        <td>-</td>
+                        <td>KOLKATA</td>
+                        <td>2000/-</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>MS. PAYEL SHAW (ARMY OFFICER)</td>
+                        <td>-</td>
+                        <td>NEW DELHI</td>
+                        <td>3600/-</td>
+                        <td>22 NO. DEKCHI</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>SRI ARVIND KUMAR (DEFENCE)</td>
+                        <td>-</td>
+                        <td>KASHMIR</td>
+                        <td>2000/-</td>
+                        <td>NEROLAC PAINT</td>
+                  </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>SRI RAJ KUMAR (DEFFENCE)</td>
+                        <td>-</td>
+                        <td>HIMACHAL PRADESH</td>
+                        <td>2000/-</td>
+                        <td>NEROLAC PAINT</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>SRI NAG SINGH (DEFFENCE)</td>
+                        <td>-</td>
+                        <td>RAJASTHAN</td>
+                        <td>2000/-</td>
+                        <td>NEROLAC PAINT</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>SMT. SUDHA MISHRA</td>
+                        <td>-</td>
+                        <td>DWARIKA BHAVAN</td>
+                        <td>N/A</td>
+                        <td>ALL LED LIGHTS</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>SRI RAJ KUMAR SHAW</td>
+                        <td>-</td>
+                        <td>BUDBUD</td>
+                        <td>N/A</td>
+                        <td>CHONGA SPEAKER</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>SRI RAMKRISHNA MONDAL (ARMY)</td>
+                        <td>-</td>
+                        <td>107AD REGT PANAGARH</td>
+                        <td>N/A</td>
+                        <td>4 BALTI & 4 KARCHHUL </td>
+                    </tr>
+                    <tr>
+                      <td>19</td>
+                      <td>SRI NARENDRA SINGH DHANU (ARMY) </td>
+                      <td>-</td>
+                      <td>UTTRAKHAND</td>
+                      <td>N/A</td>
+                      <td>HALOGEN</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>SMT. PREMLATA AGARWAL </td>
+                        <td>-</td>
+                        <td>BUDBUD</td>
+                        <td>N/A</td>
+                        <td>PITAL THALI </td>
+                    </tr>
+                    <tr>
+                      <td>21</td>
+                      <td>SRI AJOY KONWAR (WBSEDCL) </td>
+                      <td>-</td>
+                      <td>BUDBUD</td>
+                      <td>N/A</td>
+                      <td>ROOF WATER PROTECTOR </td>
+                    </tr>
+                    <tr>
+                      <td>22</td>
+                      <td>SRI RAHUL MONDAL (BANDHAN BANK) </td>
+                      <td>-</td>
+                      <td>BUDBUD</td>
+                      <td>201/-</td>
+                      <td>N/A</td>
+                    </tr>
+                    <tr>
+                      <td>23</td>
+                      <td>SRI RAJESH SHAW </td>
+                      <td>-</td>
+                      <td>SUKANTA NAGAR </td>
+                      <td>1000/-</td>
+                      <td>N/A</td>
+                    </tr>
+                    <tr>
+                      <td>24</td>
+                      <td>SRI BAPI SAHA</td>
+                      <td>-</td>
+                      <td>SUKANTA NAGAR </td>
+                      <td>500/-</td>
+                      <td>N/A</td>
+                    </tr>
+                    <tr>
+                      <td>25</td>
+                      <td>SRI MAKHAN SINGH (ARMY OFFICER) </td>
+                      <td>-</td>
+                      <td>PUNJAB</td>
+                      <td>511/-</td>
+                      <td>N/A</td>
+                    </tr>
+                 </tbody>
+            </table>
+        </div>
+  </div>
+</div>
+
+<p align="center" class="style1" style="margin-top: 30px;">© Shiv Kali Mandir Puja Committee | This webpage has been designed by R K MISHRA (DWARIKADHISH). Unauthorized copying, modification, resale, distribution or commercial use is prohibited and may lead to legal action</p>
+
+<div id="globalLoader" class="modal-overlay" style="z-index: 9999;">
+    <div class="loader-wrapper">
+        <div class="loader-ring"></div>
+        <div class="loader-text">Please Wait</div>
+    </div>
+</div>
+
+<div id="seeMemberModal" class="modal-overlay">
+    <div class="member-modal">
+        <div class="modal-header">
+            <h3>👥 Committee Members List</h3>
+            <button class="close-modal" onClick="closeActiveModal('seeMemberModal')">×</button>
+        </div>
+        <div class="modal-body">
+            <div class="member-row member-row-header">
+                <div>SL NO.</div><div>NAME</div><div>DESIGNATION</div><div>MOBILE NO.</div>
+            </div>
+            <div class="member-row">
+                <div>01</div><div>SRI SUJIT SENAPATI</div><div>PRESIDENT</div><div>9233979652</div>
+            </div>
+            <div class="member-row">
+                <div>02</div><div>SRI SANJIB MONDAL</div><div>VICE-PRESIDENT</div><div>9883587374</div>
+            </div>
+            <div class="member-row">
+                <div>03</div><div>SRI PRAHLAD CHAKRABORTY</div><div>SECRETARY</div><div>9232729635</div>
+            </div>
+            <div class="member-row">
+                 <div>04</div><div>SRI AJOY KONWAR</div><div>VICE-SECRETARY</div><div>7602230892</div>
+            </div>
+            <div class="member-row">
+                <div>05</div><div>SRI NIMAI KUNDU</div><div>CASHIER</div><div>8972220180</div>
+            </div>
+            <div class="member-row">
+                <div>06</div><div>SRI UDAY SHANKAR SHAW</div><div>VICE-CASHIER</div><div>8293444687</div>
+            </div>
+            <div class="member-row">
+                 <div>07</div><div>SRI R K MISHRA</div><div>VICE-CASHIER</div><div>9563****15</div>
+            </div>
+            <div class="member-row">
+                <div>08</div><div>SRI GANESH CHANDRA PATRA</div><div>MEMBER</div><div>9775918152</div>
+            </div>
+            <div class="member-row">
+                <div>09</div><div>SRI SUJIT MONDAL</div><div>MEMBER</div><div>8642913527</div>
+            </div>
+            <div class="member-row">
+                <div>10</div><div>SRI DHANANJOY MONDAL </div><div>MEMBER</div><div>9475149519</div>
+            </div>
+            <div class="member-row">
+                <div>11</div><div>SRI HABAL RUIDAS</div><div>MEMBER</div><div>7029193562</div>
+            </div>
+            <div class="member-row">
+                <div>12</div><div>SRI GANESH PANDIT</div><div>MEMBER</div><div>9933641731</div>
+            </div>
+            <div class="member-row">
+                <div>13</div><div>SRI PAPPU YADAV</div><div>MEMBER</div><div>7866863146</div>
+            </div>
+            <div class="member-row">
+                <div>14</div><div>SRI KOUSHIK MUKHERJEE</div><div>MEMBER</div><div>9635328685</div>
+            </div>
+            <div class="member-row">
+                <div>15</div><div>SRI TAPAS MONDAL</div><div>MEMBER</div><div>9933056438</div>
+            </div>
+            <div class="member-row">
+                <div>16</div><div>SRI BAPI SAHA</div><div>MEMBER</div><div>9434667768</div>
+             </div>
+            <div class="member-row">
+                <div>17</div><div>SRI SABUCHH MITRA</div><div>MEMBER</div><div>-</div>
+            </div>
+            <div class="member-row">
+                <div>18</div><div>SRI MANVENDRA KARAK (RAJU)</div><div>MEMBER</div><div>9232307880</div>
+            </div>
+            <div class="member-row">
+                <div>19</div><div>SRI PROSENJIT DEY (RAHA)</div><div>MEMBER</div><div>-</div>
+            </div>
+            <div class="member-row">
+                 <div>20</div><div>SRI RAJESH SHAW</div><div>MEMBER</div><div>9932768385</div>
+            </div>
+            <div class="member-row">
+                <div>21</div><div>SRI FOTIK PAL</div><div>MEMBER</div><div>7872161021</div>
+            </div>
+            <div class="member-row">
+                <div>22</div><div>SRI BANTI BHANDARI</div><div>MEMBER</div><div>-</div>
+            </div>
+            <div class="member-row">
+                <div>23</div><div>SRI BISHWAJIT DAS</div><div>MEMBER</div><div>7679379835</div>
+            </div>
+            <div class="member-row">
+                <div>24</div><div>SRI CHIRANJIT SAI</div><div>MEMBER</div><div>8768801555</div>
+            </div>
+            <div class="member-row">
+                <div>25</div><div>SRI GAURI SHANKAR MAHATO (LALI)</div><div>MEMBER</div><div>7029885234</div>
+            </div>
+            <div class="member-row">
+                 <div>26</div><div>SRI PRADIP PANDIT</div><div>MEMBER</div><div>-</div>
+            </div>
+            <div class="member-row">
+                <div>27</div><div>SRI GOUTAM LAL PANDIT</div><div>MEMBER</div><div>7679806596</div>
+            </div>
+            <div class="member-row">
+                <div>28</div><div>SRI SUBHASH YADAV</div><div>MEMBER</div><div>7478810641</div>
+            </div>
+            <div class="member-row">
+                <div>29</div><div>SRI ADHIR GOSWAMI</div><div>MEMBER</div><div>6297390287</div>
+             </div>
+            <div class="member-row">
+                <div>30</div><div>SRI BABU PANJA</div><div>MEMBER</div><div>8170883500</div>
+				</div>
+            <div class="member-row">
+                <div>31</div><div>SRI TUHIN PATRA (BAPAN)</div><div>MEMBER</div><div>7550970204</div>
+				 </div>
+            <div class="member-row">
+                <div>32</div><div>SRI DHARMENDRA SINGH</div><div>MEMBER</div><div>9091550016</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="donateModal" class="modal-overlay">
+    <div class="member-modal">
+        <div class="modal-header">
+            <h3>❤️ Please Donate / अनुदान दें</h3>
+            <button class="close-modal" onClick="closeActiveModal('donateModal')">×</button>
+        </div>
+        <div class="modal-body">
+            <div class="qr-container">
+                <p>Scan QR Code to Send Donation directly to Mandir Account</p>
+                <img src="donation_qr.png" alt="Mandir UPI QR Code" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=ShivKaliMandirPujaCommittee'">
+                 <p style="margin-top: 10px;"><strong>UPI ID:</strong> mandir@ybl</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="mediaModal" class="modal-overlay">
+    <div class="member-modal">
+        <div class="modal-header">
+            <h3>📸 Photos & Videos Gallery</h3>
+            <button class="close-modal" onClick="closeActiveModal('mediaModal')">×</button>
+        </div>
+        <div class="modal-body">
+            <div class="gallery-grid" id="dynamicGallery">
+                <div class="gallery-item">
+                    <img src="kali.jpg" alt="Kali Ma" onerror="this.src='https://via.placeholder.com/220x160?text=Maha+Kali+Ma'">
+                     <div class="gallery-item-title">Maha Kali Darshan</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="shiv.jpg" alt="Shiv Ji" onerror="this.src='https://via.placeholder.com/220x160?text=Baba+Shiv+Ji'">
+                    <div class="gallery-item-title">Baba Bholenath</div>
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="contactDetailsModal" class="modal-overlay">
+    <div class="member-modal">
+        <div class="modal-header">
+            <h3>📞 Contact Us</h3>
+            <button class="close-modal" onClick="closeActiveModal('contactDetailsModal')">×</button>
+        </div>
+        <div class="modal-body">
+            <div class="contact-profile-box">
+                <img src="PHOTO.jpg" alt="SANJEEB MONDAL" class="contact-avatar" onerror="this.src='https://via.placeholder.com/110x130?text=Sanjib+Photo'">
+                <div class="contact-info">
+                    <h4>SANJIB MONDAL</h4>
+                    <p style="color: #92400e; font-weight: bold;">VICE PRESIDENT</p>
+                    <p>📞 Mobile No. 9883587374</p>
+                </div>
+            </div>
+
+            <div class="details-card">
+                <div class="details-title">Mandir Address</div>
+                <p style="margin-bottom: 15px; color:#475569; font-weight: bold;">Sukanta Nagar Purba Para, Budbud, Purba Bardhaman, West Bengal</p>
+                 <div class="details-title">Address Map Location</div>
+                <div style="width: 100%; overflow: hidden; border-radius: 8px;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.7027376672323!2d87.5413343!3d23.4080132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f78314ff5fa93f%3A0x2dbce3ebcb4659d6!2sBudbud%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="adminAuthModal" class="modal-overlay">
+    <div class="member-modal">
+        <div class="modal-header">
+            <h3>⚙️ Admin Panel (Only For R K MISHRA)</h3>
+            <button class="close-modal" onClick="closeActiveModal('adminAuthModal')">×</button>
+        </div>
+        <div class="modal-body">
+            <div id="authScreen" class="auth-container">
+                <p style="margin-bottom: 12px; font-weight: bold; color: var(--secondary);">ENTER SECURE PASSWORD TO ACCESS:</p>
+                <input type="password" id="adminPassword" class="admin-input" placeholder="••••">
+                 <button class="admin-btn" onClick="verifyAdminAccess()">Unlock Panel</button>
+            </div>
+
+            <div id="uploadScreen" style="display: none;">
+                <div class="details-card">
+                    <div class="details-title">Upload Control (Photos / Videos Only)</div>
+                     <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div>
+                            <label style="font-weight: bold; display:block; margin-bottom: 5px;">Choose Photo or Video:</label>
+                            <input type="file" id="mediaFile" accept="image/*,video/*" style="padding: 10px; width: 100%; border: 1px solid #ccc; border-radius: 8px;">
+                        </div>
+                        <div>
+                            <label style="font-weight: bold; display:block; margin-bottom: 5px;">Media Description / Title:</label>
+                            <input type="text" id="mediaTitle" placeholder="e.g., Durga Puja Event" style="padding: 12px; width: 100%; border: 1px solid #ccc; border-radius: 8px; font-weight: bold;">
+                        </div>
+                        <button class="admin-btn" style="background: #10b981;" onClick="handleAdminUpload()">Publish Live</button>
+                    </div>
+                </div>
+             </div>
+            
+        </div>
+    </div>
+</div>
+
+
+<script>
+// ==== LOGIC FOR 3-SECOND BUFFERING ====
+function showLoaderAndOpenModal(modalId) {
+    var loader = document.getElementById('globalLoader');
+    var targetModal = document.getElementById(modalId);
+    
+    if (loader && targetModal) {
+        // Step 1: Show CSS Loader
+        loader.style.display = 'flex';
+        
+        // Step 2: Wait 3 seconds (3000 milliseconds)
+        setTimeout(function() {
+            loader.style.display = 'none'; // Hide loader
+            targetModal.style.display = 'flex'; // Show actual modal
+        }, 3000);
+    }
+}
+
+function openModal(modalId) {
+    showLoaderAndOpenModal(modalId);
+}
+
+function openMediaModal() {
+    showLoaderAndOpenModal('mediaModal');
+}
+// ==========================================
+
+function closeActiveModal(modalId) {
+    var modal = document.getElementById(modalId);
+    if(modal) { 
+        modal.style.display = 'none'; 
+        if(modalId === 'adminAuthModal') {
+            document.getElementById('authScreen').style.display = 'block';
+            document.getElementById('uploadScreen').style.display = 'none';
+            document.getElementById('adminPassword').value = '';
+        }
+    }
+}
+
+function verifyAdminAccess() {
+    var pin = document.getElementById('adminPassword').value;
+    if(pin === "2437") {
+        document.getElementById('authScreen').style.display = 'none';
+        document.getElementById('uploadScreen').style.display = 'block';
+    } else {
+        alert("Incorrect Access Password! Access Denied.");
+        document.getElementById('adminPassword').value = '';
+    }
+}
+
+function handleAdminUpload() {
+    var fileInput = document.getElementById('mediaFile');
+    var titleInput = document.getElementById('mediaTitle').value;
+    if(!fileInput.files[0] || titleInput.trim() === "") {
+        alert("Please select a file and enter a title!");
+        return;
+    }
+    
+    var file = fileInput.files[0];
+    var reader = new FileReader();
+    reader.onload = function(e) {
+        var gallery = document.getElementById('dynamicGallery');
+        var newItem = document.createElement('div');
+        newItem.className = 'gallery-item';
+        
+        if(file.type.startsWith('video/')) {
+            newItem.innerHTML = `<video src="${e.target.result}" controls></video>
+                                 <div class="gallery-item-title">${titleInput.toUpperCase()}</div>`;
+        } else {
+            newItem.innerHTML = `<img src="${e.target.result}" alt="Uploaded Asset">
+                                 <div class="gallery-item-title">${titleInput.toUpperCase()}</div>`;
+        }
+        
+        gallery.insertBefore(newItem, gallery.firstChild);
+        alert("Media successfully published to live gallery page!");
+        
+        document.getElementById('mediaTitle').value = '';
+        fileInput.value = '';
+        closeActiveModal('adminAuthModal');
+    }
+    
+    reader.readAsDataURL(file);
+}
+
+window.onclick = function(event) {
+    if (event.target.classList.contains('modal-overlay')) {
+        // Prevent closing if user clicks on the loader background
+        if (event.target.id === 'globalLoader') return;
+
+        event.target.style.display = "none";
+        if(event.target.id === 'adminAuthModal') {
+            document.getElementById('authScreen').style.display = 'block';
+            document.getElementById('uploadScreen').style.display = 'none';
+            document.getElementById('adminPassword').value = '';
+        }
+    }
+}
+</script>
+
+</body>
+</html>
